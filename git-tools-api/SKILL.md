@@ -16,6 +16,7 @@ description: Push code and create commits through the Dockerized git-tools API i
   - 临时仓库目录是 `data/staging/`
   - 默认 key 名是 `default`
   - 私钥写入 `data/keys/<key_name>.key`
+  - 本地约定私钥文件路径是 `git-tools-api/key`；这是本地文件，不要推送到远端仓库
 
 ## 主流程
 
@@ -29,6 +30,7 @@ description: Push code and create commits through the Dockerized git-tools API i
 ### 2. 准备推送用的 SSH key
 
 - 优先复用已经存在的 key，默认 key 名是 `default`
+- 如果用户说 key 在 `git-tools-api/key`，优先读取这个本地文件并用 `POST /keys/import` 导入
 - 用户已有私钥时，优先用 `POST /keys/import` 或启动时环境变量注入
 - 只有用户明确想一次请求里同时导 key 和推送时，才在 `/git/push` body 中传 `private_key`
 - 不要建议把真实私钥提交到仓库
