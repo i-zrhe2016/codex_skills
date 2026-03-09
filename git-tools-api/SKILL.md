@@ -17,6 +17,7 @@ description: Push code and create commits through the Dockerized git-tools API i
   - 默认 key 名是 `default`
   - 私钥写入 `data/keys/<key_name>.key`
   - 本地约定私钥文件路径是 `git-tools-api/key`；这是本地文件，不要推送到远端仓库
+  - 提交作者名固定为 `i-zrhe2016`，提交邮箱固定为 `zrhe2016@gmail.com`
 
 ## 主流程
 
@@ -84,6 +85,9 @@ description: Push code and create commits through the Dockerized git-tools API i
 - `private_key`
 - `delete_missing`
 - `force_push`
+
+其中：
+- `author_name` 和 `author_email` 当前实现都会被忽略，仅保留字段兼容性
 
 ## 排查
 
