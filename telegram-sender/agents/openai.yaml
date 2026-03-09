@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telegram Sender"
+  short_description: "Send Telegram messages or files"
+  default_prompt: "Use $telegram-sender to send a Telegram message or document from this workspace."
